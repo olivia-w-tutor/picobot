@@ -1,0 +1,174 @@
+# Get Picobot to the upper leftmost corner.
+
+0 ***x -> S 0
+0 *x*S -> E 0
+0 xExS -> N 1
+
+1 xE** -> N 1
+1 xxxx -> W 1
+1 xxWx -> N 1
+1 N*xx -> W 1
+1 NxWx -> S 2
+
+2 xxxx -> S 0
+2 xxWx -> N 3
+
+# First fill
+
+3 ***x -> S 3
+3 *x*S -> E 4
+3 xExS -> W 8
+
+4 ***x -> S 4
+4 x**S -> N 5
+
+5 x*** -> N 5
+5 Nx** -> E 6
+5 NE*x -> S 7
+
+6 x*** -> N 6
+6 N**x -> S 3
+
+7 *x** -> E 3
+
+# Second fill
+
+8 **xS -> W 8
+8 xxW* -> N 8
+8 NxWx -> E 9
+
+9 ***x -> S 9
+9 *x*S -> E 10
+
+10 x*** -> N 10
+10 Nx** -> E 10
+10 NExx -> W 11
+
+# Get Picobot to upper rightmost corner
+
+11 N*xx -> W 11
+11 x*xx -> N 11
+11 NxWx -> E 12
+
+12 Nxxx -> E 12
+12 NExx -> S 13
+
+# Final fill
+13 ***x -> S 13
+13 **xS -> W 14
+13 xxWS -> N 14
+
+14 x*** -> N 14
+14 N*x* -> W 13
+14 NxWx -> S 15
+
+15 ***x -> S 15
+15 **xS -> W 15
+15 xxWS -> N 5
+
+
+
+# Get Picobot to upper left corner
+
+0 x*** -> N 0
+0 N*x* -> W 0
+0 NxWx -> S 1
+
+1 **Wx -> S 1
+1 **x* -> W 1
+1 xxWS -> E 2
+
+2 *x*S -> E 2
+2 xExS -> N 0
+2 xxxx -> W 3
+
+3 **x* -> W 3
+3 x*W* -> N 3
+3 NxWx -> E 4
+
+# Go in up-down-right stripes until an upper left corner
+4 ***x -> S 4
+4 *x*S -> E 5
+4 xExS -> N 12
+
+5 x*** -> N 5
+5 N*xx -> S 4
+5 NxWx -> S 6
+
+6 ***x -> S 6
+6 **xS -> W 6
+6 xxWS -> N 7
+
+# go in up-down-right strips until an upper right corner
+
+7 x*** -> N 7
+7 Nx*x -> E 8
+7 NExx -> S 9
+
+8 ***x -> S 8
+8 x**S -> N 7
+
+# go to next spot and resume up-down stripes
+
+9 *Exx -> S 9
+9 **xS -> W 9
+9 x*W* -> N 9
+9 xxxx -> W 9
+9 NxWx -> S 10
+
+10 **Wx -> S 10
+10 xxxx -> N 11
+10 xxWS -> N 4
+
+11 *x** -> E 11
+11 NExx -> S 4
+
+12 x*** -> N 12
+12 Nx** -> E 8
+
+-----
+
+0 *x** -> E 0
+0 *E*x -> S 0
+0 xExS -> W 1
+
+1 **xS -> W 1
+1 xxW* -> N 1
+1 xxxx -> W 2
+1 NxWx -> E 3
+
+2 xxxS -> W 2
+2 xxxx -> S 0
+
+3 Nxxx -> E 3
+3 xxxx -> N 3
+3 xxWx -> N 3
+3 NExx -> S 4
+3 NxWx -> E 4
+
+4 Nxxx -> E 4
+4 xx*x -> N 4
+4 NxWx -> S 0
+4 xExx -> S 4
+4 x*xS -> W 4
+4 xxWS -> N 5
+
+# SW room
+
+5 *x** -> E 5
+5 xE** -> N 6
+5 NExx -> W 7
+
+6 **x* -> W 6
+6 *xW* -> E 5
+
+# NW room
+
+7 Nxxx -> W 7
+7 x*xx -> N 7
+7 NExx -> W 7
+7 NxWx -> E 8
+
+8 Nxxx -> E 8
+8 *Exx -> S 8
+8 xExS -> W 6
